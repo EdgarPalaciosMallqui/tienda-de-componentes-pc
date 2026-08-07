@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  border-color: #2a2f34;
+}
+
+body {
+  background-color: #14171a;
+  color: #edeef0;
+  font-family: var(--font-body);
+}
+
+/* Foco visible para accesibilidad de teclado */
+:focus-visible {
+  outline: 2px solid #5fd1c9;
+  outline-offset: 2px;
+}
+
+/* Reduce movimiento si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Etiqueta tipo "pin" de datasheet usada en tarjetas de producto */
+.spec-pin {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.02em;
+  color: #a7abb0;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 0;
+  border-bottom: 1px dashed #2a2f34;
+}
+.spec-pin:last-child {
+  border-bottom: none;
+}
